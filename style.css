@@ -1,0 +1,33 @@
+/* Fonte mais bonita */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título principal */
+h1 {
+  color: #d63384; /* rosa confeitaria */
+  font-weight: bold;
+}
+
+/* Cards dos produtos */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Preço */
+.card p {
+  font-weight: bold;
+  color: #198754;
+}
+
+/* Botão WhatsApp */
+.btn-success {
+  font-size: 1.1rem;
+  padding: 12px;
+}
+
+/* Espaçamento entre seções */
+h3 {
+  margin-top: 30px;
+}
