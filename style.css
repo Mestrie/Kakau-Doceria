@@ -1,33 +1,151 @@
-/* Fonte mais bonita */
+:root {
+  --rosa-principal: #d63384;
+  --rosa-suave: #fff5f8;
+  --texto-escuro: #4a4a4a;
+}
+/* Cores e Fontes */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--texto-escuro);
+  background-color: #fcfcfc;
 }
 
-/* Título principal */
-h1 {
-  color: #d63384; /* rosa confeitaria */
+.text-primary {
+  color: var(--rosa-principal) !important;
+}
+
+h1, h2, h3, h4 {
+  color: #d63384; /* Rosa Kakau */
   font-weight: bold;
 }
 
-/* Cards dos produtos */
+
+/* Estilo dos Cards */
 .card {
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s;
 }
 
-/* Preço */
-.card p {
-  font-weight: bold;
-  color: #198754;
+.card:hover {
+  transform: translateY(-5px);
 }
 
-/* Botão WhatsApp */
+/* Cores de Destaque */
+.btn-primary {
+  background-color: #d63384;
+  border-color: #d63384;
+}
+
+.btn-primary:hover {
+  background-color: #b02a6b;
+}
+
+.btn-success:hover {
+  transform: scale(1.05);
+  background-color: #218838;
+}
+
+/* Estilo para o quadro de chamada (Call to Action) */
+.border-dashed {
+  border: 2px dashed #fce4ec;
+}
+
+header {
+  border-bottom: 5px solid var(--rosa-suave);
+}
+
+/* Cards de informações */
+.card i {
+  color: var(--rosa-principal);
+}
+
+.lead {
+  font-style: italic;
+  font-weight: 300;
+}
+
+
+/* Cor inspirada no uniforme verde-água da logo */
+.alert-info {
+  background-color: #e0f7f1;
+  border-color: #20c997;
+  color: #087f5b;
+}
+
 .btn-success {
-  font-size: 1.1rem;
-  padding: 12px;
+  background-color: #25d366; /* Cor oficial do WhatsApp */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Espaçamento entre seções */
-h3 {
-  margin-top: 30px;
+/* Espaçamentos */
+label {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.form-select, .form-control {
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Estilo para as seções do formulário */
+.secao-produto {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+}
+
+/* Deixar os checkboxes mais organizados */
+.form-check {
+  padding: 10px 30px;
+  background: #fff5f8;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.form-check:hover {
+  background: #fde8f0;
+}
+
+.form-check-input:checked {
+  background-color: #d63384;
+  border-color: #d63384;
+  
+}
+
+/* Padronização de rótulos */
+.form-label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.4rem;
+}
+
+/* Alinhamento dos itens extras (geleia e decorações) */
+.extra-item, .extra-item-list .form-check {
+  background-color: #fff5f8; /* Fundo suave para destacar a opção */
+  padding: 10px 10px 10px 35px; /* Espaço para o check */
+  border-radius: 8px;
+  border: 1px solid #fce4ec;
+  margin-bottom: 5px;
+}
+
+/* Garante que o checkbox não fique "flutuando" */
+.form-check-input {
+  margin-top: 0.3em;
+}
+
+/* Espaçamento interno do card para não encostar nas bordas */
+.card-body {
+  padding: 2rem;
+}
+
+/* Linha divisória suave para as seções */
+.border-top {
+  border-top: 2px solid #f8f9fa !important;
 }

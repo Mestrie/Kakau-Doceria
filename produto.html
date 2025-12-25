@@ -2,52 +2,136 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Detalhes do Produto</title>
+  <title>Fazer Pedido - Kakau Doceria</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-light">
 
 <div class="container py-4">
+  <a href="index.html" class="btn btn-outline-secondary mb-3">⬅ Voltar</a>
 
-  <a href="index.html">⬅ Voltar</a>
-
-  <div class="card mt-3">
-    <img src="imagens/bolo-chocolate.jpg" class="card-img-top" alt="">
+  <div class="card shadow-sm">
     <div class="card-body">
+      <h2 class="text-center mb-4">Monte seu Pedido</h2>
 
-      <h2 id="nomeProduto">Bolo de Chocolate</h2>
-      <p>Bolo artesanal feito sob encomenda.</p>
+      <div class="border-bottom pb-4 mb-4">
+        <h4 class="text-secondary">🎂 Bolos Festivos</h4>
+        
+        <div class="row mb-3">
+          <div class="col-12">
+            <label class="fw-bold">Escolha o Tamanho</label>
+            <select id="bolo_tamanho" class="form-select" onchange="atualizarPrecoGeleia()">
+              <option value="">Nenhum bolo selecionado</option>
+              <option value="EP (10 fatias) - R$155">EP - 10 fatias (R$ 155,00)</option>
+              <option value="PP (15 fatias) - R$205">PP - 15 fatias (R$ 205,00)</option>
+              <option value="P (20 fatias) - R$240">P - 20 fatias (R$ 240,00)</option>
+              <option value="M (30 fatias) - R$293">M - 30 fatias (R$ 293,00)</option>
+              <option value="G (40 fatias) - R$383">G - 40 fatias (R$ 383,00)</option>
+            </select>
+          </div>
+        </div>
 
-      <!-- Quantidade -->
-      <label class="mt-2">Quantidade</label>
-      <input type="number" id="quantidade" class="form-control" min="1" value="1">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="fw-bold">Massa</label>
+            <select id="bolo_massa" class="form-select">
+              <option>Baunilha</option>
+              <option>Chocolate</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Recheio</label>
+            <select id="bolo_recheio" class="form-select">
+              <option>Chocolate ao leite</option> 
+              <option>Coco</option> 
+              <option>Leite ninho</option> 
+              <option>Doce de leite</option> 
+              <option>4 leites com geleia de morango</option> 
+              <option>Ovomaltine</option> 
+              <option>Castanha</option> 
+              <option>Maracujá</option> 
+              <option>Morango</option> 
+            </select>
+            <div class="form-check mt-2">
+              <input class="form-check-input" type="checkbox" id="add_geleia" onclick="atualizarPrecoGeleia()">
+              <label class="form-check-label" for="add_geleia">
+                Adicionar Geleia de Morango 🍓 <span id="valor_geleia" class="text-muted small"></span>
+              </label>
+            </div>
+          </div>
+        </div>
 
-      <!-- Cobertura -->
-      <label class="mt-3">Cobertura</label>
-      <select id="cobertura" class="form-select">
-        <option>Chocolate</option>
-        <option>Brigadeiro</option>
-        <option>Ganache</option>
-      </select>
+        <div class="row mt-4 pt-3 border-top">
+          <div class="col-12">
+            <h5 class="text-secondary mb-3">🎨 Decoração do Bolo</h5>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label class="fw-bold">Estilo (Inclusos)</label>
+            <select id="decoracao_estilo" class="form-select">
+              <option value="Trabalho de bico">Trabalho de bico</option>
+              <option value="Glowcake">Glowcake</option>
+              <option value="Espatulado">Espatulado</option>
+              <option value="Confeitos">Confeitos</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="fw-bold">Extras (Opcional)</label>
+            <div class="p-2 border rounded bg-light">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add_flores" value="45">
+                <label class="form-check-label">Flores (+ R$ 45,00)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add_bombons" value="10">
+                <label class="form-check-label">Bombons (+ R$ 10,00)</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="add_brigadeiros" value="10">
+                <label class="form-check-label">Brigadeiros (+ R$ 10,00)</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <!-- Tamanho -->
-      <label class="mt-3">Tamanho</label>
-      <select id="tamanho" class="form-select">
-        <option>Pequeno</option>
-        <option>Médio</option>
-        <option>Grande</option>
-      </select>
+      <div class="border-bottom pb-4 mb-4">
+        <h4 class="text-secondary">🎁 Kits Festa</h4>
+        <select id="kit_festa" class="form-select">
+          <option value="">Nenhum kit selecionado</option>
+          <option value="Kit Kakau Doceria (R$290)">Kit Kakau Doceria - R$ 290,00 </option>
+          <option value="Kit Vai Ter Festinha Sim (R$470)">Kit Vai Ter Festinha Sim - R$ 470,00 </option>
+          <option value="Kit Coração de Mãe (R$410)">Kit Coração de Mãe - R$ 410,00 </option>
+          <option value="Kit Happy Birthday (R$335)">Kit Happy Birthday - R$ 335,00</option>
+        </select>
+      </div>
 
-      <button class="btn btn-success w-100 mt-4" onclick="adicionarPedido()">
-        Adicionar ao pedido
+      <div class="mb-4">
+        <h4 class="text-secondary">🍕 Salgados (Cento)</h4>
+        <div class="row">
+          <div class="col-6">
+            <label class="fw-bold">Salgados Fritos</label>
+            <input type="number" id="qtd_fritos" class="form-control" placeholder="0" min="0">
+          </div>
+          <div class="col-6">
+            <label class="fw-bold">Mini Pizzas</label>
+            <input type="number" id="qtd_pizzas" class="form-control" placeholder="0" min="0">
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-success w-100 py-3 mt-3 shadow-sm" onclick="adicionarPedido()">
+        🚀 Enviar Pedido para WhatsApp
       </button>
 
+      <div class="alert alert-info mt-4 py-2 text-center">
+        <small>
+          📌 <strong>Lembrete:</strong> Encomendas e cancelamentos feitos com 48h de antecedência e 50% do pagamento deve ser feito no ato da encomenda e os outros 50% na entrega.
+        </small>
+      </div>
     </div>
   </div>
-
 </div>
 
 <script src="script.js"></script>
