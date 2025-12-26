@@ -98,28 +98,129 @@
 
       <div class="border-bottom pb-4 mb-4">
         <h4 class="text-secondary">🎁 Kits Festa</h4>
-        <select id="kit_festa" class="form-select">
+        <p class="small text-muted mb-2">Selecione um combo completo para sua comemoração:</p>
+        
+        <select id="kit_festa" class="form-select mb-3" onchange="mostrarDetalhesKit()">
           <option value="">Nenhum kit selecionado</option>
-          <option value="Kit Kakau Doceria (R$290)">Kit Kakau Doceria - R$ 290,00 </option>
-          <option value="Kit Vai Ter Festinha Sim (R$470)">Kit Vai Ter Festinha Sim - R$ 470,00 </option>
-          <option value="Kit Coração de Mãe (R$410)">Kit Coração de Mãe - R$ 410,00 </option>
-          <option value="Kit Happy Birthday (R$335)">Kit Happy Birthday - R$ 335,00</option>
+          <option value="É SÓ UM BOLINHO - R$ 200,00">É SÓ UM BOLINHO - R$ 200,00</option>
+          <option value="KAKAU DOCERIA - R$ 290,00">KAKAU DOCERIA - R$ 290,00</option>
+          <option value="HAPPY BIRTHDAY - R$ 335,00">HAPPY BIRTHDAY - R$ 335,00</option>
+          <option value="CORAÇÃO DE MÃE - R$ 410,00">CORAÇÃO DE MÃE - R$ 410,00</option>
+          <option value="VAI TER FESTINHA SIM - R$ 470,00">VAI TER FESTINHA SIM - R$ 470,00</option>
         </select>
+
+        <div id="detalhes_kit" class="p-3 bg-light border rounded d-none">
+          <small class="fw-bold text-primary">O que vem neste kit:</small>
+          <div id="lista_itens_kit" class="small text-muted"></div>
+        </div>
       </div>
 
       <div class="mb-4">
-        <h4 class="text-secondary">🍕 Salgados (Cento)</h4>
-        <div class="row">
-          <div class="col-6">
-            <label class="fw-bold">Salgados Fritos</label>
-            <input type="number" id="qtd_fritos" class="form-control" placeholder="0" min="0">
+        <h4 class="text-secondary">🍕 Salgados e Petiscos</h4>
+        
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="p-3 border rounded bg-white">
+              <label class="fw-bold">Mini Pizzas (Calabresa, Carne de Sol, Frango ou Napolitana)</label>
+              <select id="qtd_pizzas" class="form-select mt-2">
+                <option value="">Nenhuma selecionada</option>
+                <option value="17 unidades - R$ 88,00">17 unidades - R$ 88,00</option>
+                <option value="34 unidades - R$ 175,00">34 unidades - R$ 175,00</option>
+              </select>
+            </div>
           </div>
-          <div class="col-6">
-            <label class="fw-bold">Mini Pizzas</label>
-            <input type="number" id="qtd_pizzas" class="form-control" placeholder="0" min="0">
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded bg-white">
+              <label class="fw-bold">Empadinhas (Carne de Sol, Camarão ou Frango)</label>
+              <select id="qtd_empadinhas" class="form-select mt-2">
+                <option value="">Nenhuma selecionada</option>
+                <option value="12 unidades - R$ 85,00">12 unidades - R$ 85,00</option>
+                <option value="24 unidades - R$ 150,00">24 unidades - R$ 150,00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded bg-white">
+              <label class="fw-bold">Salgadinhos Fritos (Diversos sabores)</label>
+              <select id="qtd_fritos" class="form-select mt-2">
+                <option value="">Nenhum selecionado</option>
+                <option value="50 unidades - R$ 60,00">50 unidades - R$ 60,00</option>
+                <option value="100 unidades - R$ 120,00">100 unidades - R$ 120,00</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="p-3 border rounded bg-white">
+              <label class="fw-bold">Camarão Empanado</label>
+              <select id="qtd_camarao" class="form-select mt-2">
+                <option value="">Nenhum selecionado</option>
+                <option value="50 unidades - R$ 87,50">50 unidades - R$ 87,50</option>
+                <option value="100 unidades - R$ 175,00">100 unidades - R$ 175,00</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h4 class="text-secondary">🍬 Brigadeiros (20g)</h4>
+        <div class="p-3 border rounded bg-white">
+          <label class="fw-bold mb-2">Escolha a quantidade e sabores:</label>
+          <p class="small text-muted mb-2">Sabores: Chocolate ao leite, Coco, Chocolate branco, Leite ninho, Morango, Casadinho, Surpresinha de uva, Romeu e Julieta ou Queijadinha.</p>
+          
+          <div class="row g-2">
+            <div class="col-md-8">
+              <select id="qtd_brigadeiros" class="form-select">
+                <option value="">Nenhum selecionado</option>
+                <option value="15 unidades - R$ 32,00">15 unidades - R$ 32,00</option>
+                <option value="30 unidades - R$ 55,00">30 unidades - R$ 55,00</option>
+                <option value="50 unidades - R$ 87,50">50 unidades - R$ 87,50</option>
+                <option value="100 unidades - R$ 175,00">100 unidades - R$ 175,00</option>
+              </select>
+            </div>
+          </div>
+          <textarea id="sabores_brigadeiro" class="form-control mt-2" rows="2" placeholder="Digite aqui os sabores desejados..."></textarea>
+        </div>
+      </div>
+
+
+      <div class="mb-4">
+        <h4 class="text-secondary">☕ Linha Cafezinho da Tarde</h4>
+        <div class="p-3 border rounded bg-white">
+          
+          <div class="mb-3">
+            <label class="fw-bold">Escolha seu Bolo:</label>
+            <select id="cafe_bolo" class="form-select">
+              <option value="">Nenhum selecionado</option>
+              <option value="Bolo de Goma - R$ 75,00">Bolo de Goma - R$ 75,00</option>
+              <option value="Bolo de Fubá - R$ 76,00">Bolo de Fubá - R$ 76,00</option>
+              <option value="Bolo de Cenoura - R$ 95,00">Bolo de Cenoura - R$ 95,00</option>
+              <option value="Bolo 2 Amores - R$ 110,00">Bolo 2 Amores - R$ 110,00</option>
+            </select>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-md-6">
+              <label class="fw-bold">Bebidas (1,5L):</label>
+              <select id="cafe_bebida" class="form-select">
+                <option value="">Nenhuma selecionada</option>
+                <option value="Café Cremoso - R$ 60,00">Café Cremoso - R$ 60,00</option>
+                <option value="Chocolate Quente - R$ 80,00">Chocolate Quente - R$ 80,00</option>
+              </select>
+            </div>
+            <div class="col-12 mt-2">
+              <div class="alert alert-warning py-2 mb-0">
+                <small>⚠️ <strong>Atenção:</strong> Garrafas térmicas devem ser devolvidas sem danos em até 24h.</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
 
       <button class="btn btn-success w-100 py-3 mt-3 shadow-sm" onclick="adicionarPedido()">
         🚀 Enviar Pedido para WhatsApp
